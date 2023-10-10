@@ -5,12 +5,12 @@
 	<div class="osahan-profile">
 		<div class="osahan-header-nav shadow-sm bg-danger p-3 d-flex align-items-center">
 			<h5 class="font-weight-normal mb-0 text-white">
-				<a class="text-danger mr-3" href="home.html"><i class="icofont-rounded-left"></i></a>
+				<a wire:navigate class="text-danger mr-3" href="{{ route('home') }}"><i class="icofont-rounded-left"></i></a>
 				My Profile
 			</h5>
-			<div class="ml-auto d-flex align-items-center">
-				<a class="toggle osahan-toggle h4 m-0 text-white ml-auto" href="#"><i class="icofont-navigation-menu"></i></a>
-			</div>
+{{--			<div class="ml-auto d-flex align-items-center">--}}
+{{--				<a class="toggle osahan-toggle h4 m-0 text-white ml-auto" href="#"><i class="icofont-navigation-menu"></i></a>--}}
+{{--			</div>--}}
 		</div>
 		
 		<div class="px-3 pt-3 pb-5">

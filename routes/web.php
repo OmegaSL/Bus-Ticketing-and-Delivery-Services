@@ -37,6 +37,10 @@ Route::group(['middleware' => ['auth']], static function (){
 	Route::get('/view-ticket/{payment_id}', \App\Livewire\ViewTicketComponent::class)->name('view-ticket');
 	Route::get('/profile', \App\Livewire\ProfileComponent::class)->name('profile');
 
+	Route::get('/all-delivery-orders', \App\Livewire\Delivery\AllOrderComponent::class)->name('all-delivery-orders');
+	Route::get('/delivery-package', \App\Livewire\Delivery\DeliverPackageComponent::class)->name('delivery-package');
+	Route::get('/track-package/{package}', \App\Livewire\Delivery\TrackPackageComponent::class)->name('track-package');
+
 	// The callback url after a payment
 	Route::get('/rave/callback', [PaymentController::class, 'callback'])->name('callback');
 	Route::get('/payment-complete/{payment_id}', [PaymentController::class, 'payment_success'])->name('completed-payment');

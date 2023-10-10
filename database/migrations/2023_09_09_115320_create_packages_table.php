@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
+	        $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
 			$table->string('package_name');
 			$table->string('package_type')->default('basic')->comment('Document, Parcel, Food, Clothes, Electronics, Others');
 			$table->string('package_size')->default('small')->comment('small, medium, large');

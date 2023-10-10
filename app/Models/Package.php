@@ -11,6 +11,7 @@ class Package extends Model
     use HasFactory;
 
 	protected $fillable = [
+		'user_id', // This is the user that created the package
 		'package_name',
 		'package_type',
 		'package_size',

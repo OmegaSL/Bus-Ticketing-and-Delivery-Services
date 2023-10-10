@@ -48,7 +48,7 @@ class PaymentController extends Controller
 			$booking->booking_amount = $data['data']['amount'];
 			$booking->booking_type = 'online';
 			$booking->booking_status = 'paid';
-			$booking->departure_date_time = $bus->bus_histories->first()->departure_date_time;
+			$booking->departure_date_time = $bus->bus_histories->first()?->departure_date_time ?? now();
 			$booking->save();
 
 			$payment = new \App\Models\Payment();

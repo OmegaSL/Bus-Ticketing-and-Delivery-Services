@@ -56,8 +56,8 @@ class MakePaymentComponent extends Component
             'reference' => $this->reference,
             'seats' => $this->selectedSeats,
             'bus_number' => $this->bus_number,
-            'departure_station' => $this->bus->bus_histories?->first()->currentStation?->id ?? 'N/A',
-            'arrival_station' => $this->bus->bus_histories?->first()->lastStation?->id ?? 'N/A',
+            'departure_station' => $this->bus->bus_histories?->first()->currentStation?->id ?? 1,
+            'arrival_station' => $this->bus->bus_histories?->first()->lastStation?->id ?? 2,
         ];
 
         // make flutterwave payment here

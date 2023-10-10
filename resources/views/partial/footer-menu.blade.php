@@ -13,7 +13,7 @@
 			</a>
 		</div>
 		<div class="col-3 p-0 text-center">
-			<a href="#!" class="home text-white">
+			<a wire:navigate href="{{ route('all-delivery-orders') }}" class="home text-white {{ request()->routeIs('all-delivery-orders') ? 'active' : ''}}">
 				<span class="icofont-fast-delivery h5"></span>
 {{--				<small class="osahan-n">4</small>--}}
 				<p class="mb-0 small">Deliver Package</p>
