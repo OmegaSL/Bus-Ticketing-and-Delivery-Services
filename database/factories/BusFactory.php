@@ -72,20 +72,8 @@ class BusFactory extends Factory
 				'Trash Bag',
 				'First Aid Kit',
 				'Fire Extinguisher',
-				'Defibrillator',
-				'Life Jacket',
-				'Life Raft',
-				'Life Vest',
-				'Lifebuoy',
-				'Oxygen',
-				'Lifeboat',
-				'Life Ring',
-				'Life Saver',
-				'Life Preserver',
-				'Life Float',
-				'Life Buoy',
-				'Life Preserver',
-				'Life Tube'];
+				'Defibrillator'
+		];
 
         return [
 	        'bus_name' => fake()->name(),
@@ -95,7 +83,7 @@ class BusFactory extends Factory
 	        'bus_route_to' => fake()->randomElement(['Kumasi', 'Tamale', 'Takoradi', 'Cape Coast', 'Koforidua']),
 	        'bus_capacity' => fake()->numberBetween(1, 100),
 	        'bus_route_price' => fake()->numberBetween(1, 100),
-	        'bus_status' => fake()->randomElement(['Available', 'Not Available']),
+	        'bus_status' => fake()->randomElement(['Available', 'Unavailable']),
 	        'bus_image' => null,
 	        'bus_description' => fake()->paragraph(),
 	        'bus_amenities' => $amenities,

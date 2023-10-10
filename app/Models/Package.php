@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Package extends Model
@@ -25,6 +26,14 @@ class Package extends Model
 		'package_receiver_phone',
 		'package_receiver_address',
 	];
+
+	/**
+	 * Get the user that owns the package.
+	 */
+	public function user(): BelongsTo
+	{
+		return $this->belongsTo(User::class);
+	}
 
 	public function delivery(): HasOne
 	{

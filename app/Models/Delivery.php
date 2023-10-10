@@ -25,9 +25,9 @@ class Delivery extends Model
 		return $this->belongsTo(Package::class, 'package_id');
 	}
 
-	public function driver(): HasOne
+	public function driver(): BelongsTo
 	{
-		return $this->hasOne(User::class, 'driver_id');
+		return $this->belongsTo(User::class, 'driver_id');
 	}
 
 	public function bus(): HasOne
