@@ -32,7 +32,9 @@ class AdminPanelProvider extends PanelProvider
             ])
 	        ->favicon(asset('assets/img/logo.png'))
 	        ->plugins([
-		        \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+		        \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+		        \Hasnayeen\Themes\ThemesPlugin::make()
+			        ->canViewThemesPage(fn () => auth()->user()?->hasRole('super_admin')),
 	        ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -54,7 +56,11 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+	            \Hasnayeen\Themes\Http\Middleware\SetTheme::class,
             ])
+	        ->tenantMiddleware([
+		        \Hasnayeen\Themes\Http\Middleware\SetTheme::class
+	        ])
             ->authMiddleware([
                 Authenticate::class,
             ]);
